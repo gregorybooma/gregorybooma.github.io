@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Archives - booma.net</title>
+    <title>makefile - booma.net</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,7 +10,8 @@
 
 
 
-        <meta name="author" content="Gregory Booma" />
+    <meta name="author" content="Gregory Booma" />
+    <meta name="keywords" content="makefile" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="booma.net" />
@@ -66,15 +67,16 @@ booma.net            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-    <section id="content">
-      <h1>Archives for booma.net</h1>
-        <div id="archives">
-                <p>
-                    <span class="categories-timestamp"><time datetime="2017-09-13T00:00:00-04:00">Wed 13 September 2017</time></span>
-                    <a href="http://booma.net/up-and-running-with-pelican.html">First Post Using&nbsp;Pelican</a>
-                </p>
-        </div>
-    </section>
+            <article>
+                <h2><a href="http://booma.net/up-and-running-with-pelican.html">First Post Using&nbsp;Pelican</a></h2>
+                <div class="summary"><p>After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3 theme</a>. Configuring Pelican was a bit of a pain, involving eschewing a fabfile altogether and altering the github section of the Makefile as&nbsp;follows:</p>
+<div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
+<span class="c">#   cd $(OUTPUTDIR) &amp;&amp; git …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://booma.net/up-and-running-with-pelican.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>

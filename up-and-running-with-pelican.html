@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Archives - booma.net</title>
+    <title>First Post Using Pelican - booma.net</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,15 +9,23 @@
 
 
 
+<link rel="canonical" href="http://booma.net/up-and-running-with-pelican.html">
 
         <meta name="author" content="Gregory Booma" />
+        <meta name="keywords" content="makefile,pelicanconf,github-pages" />
+        <meta name="description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, involving eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd $(OUTPUTDIR) &amp;&amp; git …" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="booma.net" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="booma.net"/>
-        <meta property="og:url" content="http://booma.net"/>
-        <meta property="og:description" content="booma.net"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="First Post Using Pelican"/>
+        <meta property="og:url" content="http://booma.net/up-and-running-with-pelican.html"/>
+        <meta property="og:description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, involving eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd $(OUTPUTDIR) &amp;&amp; git …"/>
+        <meta property="article:published_time" content="2017-09-13" />
+            <meta property="article:section" content="Pelican" />
+            <meta property="article:tag" content="makefile" />
+            <meta property="article:tag" content="pelicanconf" />
+            <meta property="article:tag" content="github-pages" />
+            <meta property="article:author" content="Gregory Booma" />
 
 
     <!-- Bootstrap -->
@@ -33,6 +41,8 @@
 
 
 
+        <link href="http://booma.net/feeds/pelican.atom.xml" type="application/atom+xml" rel="alternate"
+              title="booma.net Pelican ATOM Feed"/>
 
 </head>
 <body>
@@ -51,7 +61,7 @@ booma.net            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="http://booma.net/category/pelican.html">Pelican</a>
                         </li>
             </ul>
@@ -67,14 +77,54 @@ booma.net            </a>
     <div class="row">
         <div class="col-sm-9">
     <section id="content">
-      <h1>Archives for booma.net</h1>
-        <div id="archives">
-                <p>
-                    <span class="categories-timestamp"><time datetime="2017-09-13T00:00:00-04:00">Wed 13 September 2017</time></span>
-                    <a href="http://booma.net/up-and-running-with-pelican.html">First Post Using&nbsp;Pelican</a>
-                </p>
-        </div>
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://booma.net/up-and-running-with-pelican.html"
+                       rel="bookmark"
+                       title="Permalink to First Post Using Pelican">
+                        First Post Using&nbsp;Pelican
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-09-13T00:00:00-04:00"> Wed 13 September 2017</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://booma.net/tag/makefile.html">makefile</a>
+        /
+	<a href="http://booma.net/tag/pelicanconf.html">pelicanconf</a>
+        /
+	<a href="http://booma.net/tag/github-pages.html">github-pages</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3 theme</a>. Configuring Pelican was a bit of a pain, involving eschewing a fabfile altogether and altering the github section of the Makefile as&nbsp;follows:</p>
+<div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
+<span class="c">#   cd $(OUTPUTDIR) &amp;&amp; git add --all &amp;&amp; ghp-import -m &quot;publish site (make github)&quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p</span>
+    git -C <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> add --all
+    git -C <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> commit -v -a -m <span class="s1">&#39;Pelican :: make github&#39;</span>
+    git -C <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> push -v -u origin <span class="k">$(</span>GITHUB_PAGES_BRANCH<span class="k">)</span>
+</pre></div>
+
+
+<p>The commented-out code did nothing but cause&nbsp;problems.</p>
+<p>At this point I have a nice, simple static site and blog. I might even post to it again&nbsp;someday.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
