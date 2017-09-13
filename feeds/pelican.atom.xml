@@ -11,9 +11,16 @@
 
 
 &lt;p&gt;Posts are published by putting source markdown (or other accepted format) in the &amp;#8216;articles&amp;#8217; directory and running the following commands in a terminal (must be in top level directory of&amp;nbsp;site):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;make&lt;/span&gt; &lt;span class="err"&gt;publish&lt;/span&gt;
-&lt;span class="err"&gt;make&lt;/span&gt; &lt;span class="err"&gt;github&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make publish
+make github
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;This generates an html file of the post in the &amp;#8216;output&amp;#8217; directory, and publishes to GitHub&amp;nbsp;Pages.&lt;/p&gt;</content><category term="makefile"></category><category term="pelicanconf"></category><category term="github-pages"></category></entry></feed>
+&lt;p&gt;This generates an html file of the post in the &amp;#8216;output&amp;#8217; directory, and publishes to GitHub Pages. Edits are committed by adding a &amp;#8216;modified&amp;#8217; line in markdown, then&amp;nbsp;running&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make regenerate
+make publish
+make github
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A lot more customization/automation is possible; but for now I have a nice, straightforward website with&amp;nbsp;blog.&lt;/p&gt;</content><category term="makefile"></category><category term="pelicanconf"></category><category term="github-pages"></category></entry></feed>

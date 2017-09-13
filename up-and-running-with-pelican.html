@@ -119,12 +119,19 @@ booma.net            </a>
 
 
 <p>Posts are published by putting source markdown (or other accepted format) in the &#8216;articles&#8217; directory and running the following commands in a terminal (must be in top level directory of&nbsp;site):</p>
-<div class="highlight"><pre><span></span><span class="err">make</span> <span class="err">publish</span>
-<span class="err">make</span> <span class="err">github</span>
+<div class="highlight"><pre><span></span>make publish
+make github
 </pre></div>
 
 
-<p>This generates an html file of the post in the &#8216;output&#8217; directory, and publishes to GitHub&nbsp;Pages.</p>
+<p>This generates an html file of the post in the &#8216;output&#8217; directory, and publishes to GitHub Pages. Edits are committed by adding a &#8216;modified&#8217; line in markdown, then&nbsp;running</p>
+<div class="highlight"><pre><span></span>make regenerate
+make publish
+make github
+</pre></div>
+
+
+<p>A lot more customization/automation is possible; but for now I have a nice, straightforward website with&nbsp;blog.</p>
             </div>
             <!-- /.entry-content -->
         </article>
