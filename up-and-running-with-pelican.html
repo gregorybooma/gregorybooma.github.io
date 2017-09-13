@@ -13,13 +13,13 @@
 
         <meta name="author" content="Gregory Booma" />
         <meta name="keywords" content="makefile,pelicanconf,github-pages" />
-        <meta name="description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, involving eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd $(OUTPUTDIR) &amp;&amp; git …" />
+        <meta name="description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd …" />
 
         <meta property="og:site_name" content="booma.net" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="First Post Using Pelican"/>
         <meta property="og:url" content="http://booma.net/up-and-running-with-pelican.html"/>
-        <meta property="og:description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, involving eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd $(OUTPUTDIR) &amp;&amp; git …"/>
+        <meta property="og:description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd …"/>
         <meta property="article:published_time" content="2017-09-13" />
             <meta property="article:section" content="Pelican" />
             <meta property="article:tag" content="makefile" />
@@ -109,7 +109,7 @@ booma.net            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3 theme</a>. Configuring Pelican was a bit of a pain, involving eschewing a fabfile altogether and altering the github section of the Makefile as&nbsp;follows:</p>
+                <p>After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3 theme</a>. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as&nbsp;follows:</p>
 <div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
 <span class="c">#   cd $(OUTPUTDIR) &amp;&amp; git add --all &amp;&amp; ghp-import -m &quot;publish site (make github)&quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p</span>
     git -C <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> add --all
@@ -118,8 +118,13 @@ booma.net            </a>
 </pre></div>
 
 
-<p>The commented-out code did nothing but cause&nbsp;problems.</p>
-<p>At this point I have a nice, simple static site and blog. I might even post to it again&nbsp;someday.</p>
+<p>Posts are published by putting source markdown (or other accepted format) in the &#8216;articles&#8217; directory and running the following commands in a terminal (must be in top level directory of&nbsp;site):</p>
+<div class="highlight"><pre><span></span><span class="err">make</span> <span class="err">publish</span>
+<span class="err">make</span> <span class="err">github</span>
+</pre></div>
+
+
+<p>This generates an html file of the post in the &#8216;output&#8217; directory, and publishes to GitHub&nbsp;Pages.</p>
             </div>
             <!-- /.entry-content -->
         </article>
