@@ -18,26 +18,4 @@ git clone git@github.com:gregorybooma/mitsg-osq.git
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;5) Delete the local and GitHub versions of the originally-forked&amp;nbsp;repo&lt;/p&gt;</content><category term="repositories"></category><category term="forks"></category><category term="forked-from"></category><category term="clone"></category><category term="mirror"></category><category term="mirror-push"></category></entry><entry><title>Removing the forked from attribution from a GitHub repo</title><link href="http://booma.net/removing-the-forked-from-attribution-from-a-github-repo.html" rel="alternate"></link><published>2017-10-21T00:00:00-04:00</published><updated>2017-10-21T00:00:00-04:00</updated><author><name>Gregory Booma</name></author><id>tag:booma.net,2017-10-21:/removing-the-forked-from-attribution-from-a-github-repo.html</id><summary type="html">&lt;p&gt;The title to this post is a bit misleading. One cannot simply remove the &amp;#8220;forked from&amp;#8221; attribution from a repo. This is because a fork can be thought of as a workspace of sorts for contribution to a larger project &amp;#8212; i.e. it is still part of that larger project …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The title to this post is a bit misleading. One cannot simply remove the &amp;#8220;forked from&amp;#8221; attribution from a repo. This is because a fork can be thought of as a workspace of sorts for contribution to a larger project &amp;#8212; i.e. it is still part of that larger project. When a person wants to disconnect the fork from the larger project they cannot simply edit the &amp;#8220;forked from&amp;#8221;&amp;nbsp;attribution.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;github&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt;
-&lt;span class="c"&gt;#   cd $(OUTPUTDIR) &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; ghp-import -m &amp;quot;publish site (make github)&amp;quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p&lt;/span&gt;
-    git -C &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; add --all
-    git -C &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; commit -v -a -m &lt;span class="s1"&gt;&amp;#39;Pelican :: make github&amp;#39;&lt;/span&gt;
-    git -C &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; push -v -u origin &lt;span class="k"&gt;$(&lt;/span&gt;GITHUB_PAGES_BRANCH&lt;span class="k"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Posts are published by putting source markdown (or other accepted format) in the &amp;#8216;articles&amp;#8217; directory and running the following commands in a terminal (must be in top level directory of&amp;nbsp;site):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make publish
-make github
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;This generates an html file of the post in the &amp;#8216;output&amp;#8217; directory, and publishes to GitHub Pages. Edits are committed by adding a &amp;#8216;modified&amp;#8217; line in markdown, then&amp;nbsp;running&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make regenerate
-make publish
-make github
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;A lot more customization/automation is possible; but for now I have a nice, straightforward website with&amp;nbsp;blog.&lt;/p&gt;</content><category term="repositories"></category><category term="forks"></category><category term="forked-from"></category><category term="clone"></category><category term="mirror"></category><category term="mirror-push"></category></entry></feed>
+&lt;p&gt;5) Delete the local and GitHub versions of the originally-forked&amp;nbsp;repo&lt;/p&gt;</content><category term="repositories"></category><category term="forks"></category><category term="forked-from"></category><category term="clone"></category><category term="mirror"></category><category term="mirror-push"></category></entry></feed>
