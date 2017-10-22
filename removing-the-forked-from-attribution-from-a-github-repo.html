@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>First Post Using Pelican - booma.net</title>
+    <title>Removing the forked from attribution from a GitHub repo - booma.net</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,22 +9,25 @@
 
 
 
-<link rel="canonical" href="http://booma.net/up-and-running-with-pelican.html">
+<link rel="canonical" href="http://booma.net/removing-the-forked-from-attribution-from-a-github-repo.html">
 
         <meta name="author" content="Gregory Booma" />
-        <meta name="keywords" content="makefile,pelicanconf,github-pages" />
-        <meta name="description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd …" />
+        <meta name="keywords" content="repositories,forks,forked-from,clone,mirror,mirror-push" />
+        <meta name="description" content="The title to this post is a bit misleading. One cannot simply remove the “forked from” attribution from a repo. This is because a fork can be thought of as a workspace of sorts for contribution to a larger project — i.e. it is still part of that larger project …" />
 
         <meta property="og:site_name" content="booma.net" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="First Post Using Pelican"/>
-        <meta property="og:url" content="http://booma.net/up-and-running-with-pelican.html"/>
-        <meta property="og:description" content="After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the pelican-bootstrap3 theme. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as follows: github: publish # cd …"/>
-        <meta property="article:published_time" content="2017-09-13" />
-            <meta property="article:section" content="Pelican" />
-            <meta property="article:tag" content="makefile" />
-            <meta property="article:tag" content="pelicanconf" />
-            <meta property="article:tag" content="github-pages" />
+        <meta property="og:title" content="Removing the forked from attribution from a GitHub repo"/>
+        <meta property="og:url" content="http://booma.net/removing-the-forked-from-attribution-from-a-github-repo.html"/>
+        <meta property="og:description" content="The title to this post is a bit misleading. One cannot simply remove the “forked from” attribution from a repo. This is because a fork can be thought of as a workspace of sorts for contribution to a larger project — i.e. it is still part of that larger project …"/>
+        <meta property="article:published_time" content="2017-10-21" />
+            <meta property="article:section" content="GitHub" />
+            <meta property="article:tag" content="repositories" />
+            <meta property="article:tag" content="forks" />
+            <meta property="article:tag" content="forked-from" />
+            <meta property="article:tag" content="clone" />
+            <meta property="article:tag" content="mirror" />
+            <meta property="article:tag" content="mirror-push" />
             <meta property="article:author" content="Gregory Booma" />
 
 
@@ -41,8 +44,8 @@
 
 
 
-        <link href="http://booma.net/feeds/pelican.atom.xml" type="application/atom+xml" rel="alternate"
-              title="booma.net Pelican ATOM Feed"/>
+        <link href="http://booma.net/feeds/github.atom.xml" type="application/atom+xml" rel="alternate"
+              title="booma.net GitHub ATOM Feed"/>
 
 </head>
 <body>
@@ -61,10 +64,10 @@ booma.net            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="http://booma.net/category/github.html">Github</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="http://booma.net/category/pelican.html">Pelican</a>
                         </li>
             </ul>
@@ -83,10 +86,10 @@ booma.net            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://booma.net/up-and-running-with-pelican.html"
+                    <a href="http://booma.net/removing-the-forked-from-attribution-from-a-github-repo.html"
                        rel="bookmark"
-                       title="Permalink to First Post Using Pelican">
-                        First Post Using&nbsp;Pelican
+                       title="Permalink to Removing the forked from attribution from a GitHub repo">
+                        Removing the forked from attribution from a GitHub&nbsp;repo
                     </a>
                 </h1>
             </header>
@@ -96,7 +99,7 @@ booma.net            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-09-13T00:00:00-04:00"> Wed 13 September 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-10-21T00:00:00-04:00"> Sat 21 October 2017</time>
     </span>
 
 
@@ -104,15 +107,21 @@ booma.net            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://booma.net/tag/makefile.html">makefile</a>
+	<a href="http://booma.net/tag/repositories.html">repositories</a>
         /
-	<a href="http://booma.net/tag/pelicanconf.html">pelicanconf</a>
+	<a href="http://booma.net/tag/forks.html">forks</a>
         /
-	<a href="http://booma.net/tag/github-pages.html">github-pages</a>
+	<a href="http://booma.net/tag/forked-from.html">forked-from</a>
+        /
+	<a href="http://booma.net/tag/clone.html">clone</a>
+        /
+	<a href="http://booma.net/tag/mirror.html">mirror</a>
+        /
+	<a href="http://booma.net/tag/mirror-push.html">mirror-push</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3">pelican-bootstrap3 theme</a>. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as&nbsp;follows:</p>
+                <p>The title to this post is a bit misleading. One cannot simply remove the &#8220;forked from&#8221; attribution from a repo. This is because a fork can be thought of as a workspace of sorts for contribution to a larger project &#8212; i.e. it is still part of that larger project. When a person wants to disconnect the fork from the larger project they cannot simply edit the &#8220;forked from&#8221;&nbsp;attribution.</p>
 <div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span> <span class="n">publish</span>
 <span class="c">#   cd $(OUTPUTDIR) &amp;&amp; git add --all &amp;&amp; ghp-import -m &quot;publish site (make github)&quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p</span>
     git -C <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> add --all
