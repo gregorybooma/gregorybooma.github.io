@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>booma.net - Pelican</title><link href="http://booma.net/" rel="alternate"></link><link href="http://booma.net/feeds/pelican.atom.xml" rel="self"></link><id>http://booma.net/</id><updated>2017-09-13T00:00:00-04:00</updated><entry><title>First Post Using Pelican</title><link href="http://booma.net/up-and-running-with-pelican.html" rel="alternate"></link><published>2017-09-13T00:00:00-04:00</published><updated>2017-09-13T00:00:00-04:00</updated><author><name>Gregory Booma</name></author><id>tag:booma.net,2017-09-13:/up-and-running-with-pelican.html</id><summary type="html">&lt;p&gt;After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the &lt;a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3"&gt;pelican-bootstrap3 theme&lt;/a&gt;. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as&amp;nbsp;follows:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;github&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt;
-&lt;span class="c"&gt;#   cd …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;After some toil I have Pelican installed and set-up to publish via GitHub pages. I decided to go with the &lt;a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3"&gt;pelican-bootstrap3 theme&lt;/a&gt;. Configuring Pelican was a bit of a pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as&amp;nbsp;follows:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>booma.net - Pelican</title><link href="http://booma.net/" rel="alternate"></link><link href="http://booma.net/feeds/pelican.atom.xml" rel="self"></link><id>http://booma.net/</id><updated>2017-10-26T00:00:00-04:00</updated><entry><title>First Post Using Pelican</title><link href="http://booma.net/up-and-running-with-pelican.html" rel="alternate"></link><published>2017-09-13T00:00:00-04:00</published><updated>2017-10-26T00:00:00-04:00</updated><author><name>Gregory Booma</name></author><id>tag:booma.net,2017-09-13:/up-and-running-with-pelican.html</id><summary type="html">&lt;p&gt;After some toil I have Pelican installed and set-up to publish via GitHub Pages. I decided to go with the &lt;a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3"&gt;pelican-bootstrap3 theme&lt;/a&gt;. Configuring Pelican was a bit of a buggy pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as&amp;nbsp;follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;github&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publish …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;After some toil I have Pelican installed and set-up to publish via GitHub Pages. I decided to go with the &lt;a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3"&gt;pelican-bootstrap3 theme&lt;/a&gt;. Configuring Pelican was a bit of a buggy pain, resulting in my eschewing a fabfile altogether and altering the github section of the Makefile as&amp;nbsp;follows:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;github&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publish&lt;/span&gt;
 &lt;span class="c"&gt;#   cd $(OUTPUTDIR) &amp;amp;&amp;amp; git add --all &amp;amp;&amp;amp; ghp-import -m &amp;quot;publish site (make github)&amp;quot; -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR) -p&lt;/span&gt;
     git -C &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; add --all
@@ -10,17 +9,17 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Posts are published by putting source markdown (or other accepted format) in the &amp;#8216;articles&amp;#8217; directory and running the following commands in a terminal (must be in top level directory of&amp;nbsp;site):&lt;/p&gt;
+&lt;p&gt;One publishes new posts by putting source markdown (or other accepted format) in the &amp;#8216;articles&amp;#8217; directory and running the following commands in a terminal (must be in top level directory of&amp;nbsp;site):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make publish
 make github
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;This generates an html file of the post in the &amp;#8216;output&amp;#8217; directory, and publishes to GitHub Pages. Edits are committed by adding a &amp;#8216;modified&amp;#8217; line in markdown, then&amp;nbsp;running&lt;/p&gt;
+&lt;p&gt;This generates an html file of the post in the &amp;#8216;output&amp;#8217; directory, and publishes to GitHub Pages. Edited posts are committed by adding a &amp;#8216;modified&amp;#8217; line in&amp;nbsp;markdown:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make regenerate
 make publish
 make github
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;A lot more customization/automation is possible; but for now I have a nice, straightforward website with&amp;nbsp;blog.&lt;/p&gt;</content><category term="makefile"></category><category term="pelicanconf"></category><category term="github-pages"></category></entry></feed>
+&lt;p&gt;A lot more customization/functionality/automation is possible in Pelican; but for now I have a nice, straightforward static website with&amp;nbsp;blog.&lt;/p&gt;</content><category term="makefile"></category><category term="pelicanconf"></category><category term="github-pages"></category></entry></feed>
