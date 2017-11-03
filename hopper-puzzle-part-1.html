@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Hopper Puzzle - Part 1 - booma.net</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://booma.net/hopper-puzzle-part-1.html">
+
+        <meta name="author" content="Gregory Booma" />
+        <meta name="keywords" content="hopper,map,coordinates,radians,degrees,conversion" />
+        <meta name="description" content="Looking around for some data to play with, I stumbled-upon a small dataset that hopper is using as a teaser puzzle in their job posting for a data scientist. Taking a quick look… options(scipen=999) lapply(c(&#34;plyr&#34;,&#34;dplyr&#34;,&#34;ggplot2&#34;,&#34;scales&#34;,&#34;Hmisc&#34;,&#34;YaleToolkit&#34;,&#34;gpairs&#34;,&#34;RColorBrewer&#34;),require,character.only=T …" />
+
+        <meta property="og:site_name" content="booma.net" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Hopper Puzzle - Part 1"/>
+        <meta property="og:url" content="http://booma.net/hopper-puzzle-part-1.html"/>
+        <meta property="og:description" content="Looking around for some data to play with, I stumbled-upon a small dataset that hopper is using as a teaser puzzle in their job posting for a data scientist. Taking a quick look… options(scipen=999) lapply(c(&#34;plyr&#34;,&#34;dplyr&#34;,&#34;ggplot2&#34;,&#34;scales&#34;,&#34;Hmisc&#34;,&#34;YaleToolkit&#34;,&#34;gpairs&#34;,&#34;RColorBrewer&#34;),require,character.only=T …"/>
+        <meta property="article:published_time" content="2017-11-03" />
+            <meta property="article:section" content="Puzzles" />
+            <meta property="article:tag" content="hopper" />
+            <meta property="article:tag" content="map" />
+            <meta property="article:tag" content="coordinates" />
+            <meta property="article:tag" content="radians" />
+            <meta property="article:tag" content="degrees" />
+            <meta property="article:tag" content="conversion" />
+            <meta property="article:author" content="Gregory Booma" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://booma.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://booma.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://booma.net/theme/css/pygments/solarizeddark.css" rel="stylesheet">
+        <link href="http://booma.net/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://booma.net/theme/css/style.css" type="text/css"/>
+
+        <link href="http://booma.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="booma.net ATOM Feed"/>
+
+
+
+        <link href="http://booma.net/feeds/puzzles.atom.xml" type="application/atom+xml" rel="alternate"
+              title="booma.net Puzzles ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://booma.net/" class="navbar-brand">
+booma.net            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://booma.net/category/github.html">Github</a>
+                        </li>
+                        <li >
+                            <a href="http://booma.net/category/pelican.html">Pelican</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://booma.net/category/puzzles.html">Puzzles</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://booma.net/hopper-puzzle-part-1.html"
+                       rel="bookmark"
+                       title="Permalink to Hopper Puzzle - Part 1">
+                        Hopper Puzzle - Part&nbsp;1
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-11-03T00:00:00-04:00"> Fri 03 November 2017</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://booma.net/tag/hopper.html">hopper</a>
+        /
+	<a href="http://booma.net/tag/map.html">map</a>
+        /
+	<a href="http://booma.net/tag/coordinates.html">coordinates</a>
+        /
+	<a href="http://booma.net/tag/radians.html">radians</a>
+        /
+	<a href="http://booma.net/tag/degrees.html">degrees</a>
+        /
+	<a href="http://booma.net/tag/conversion.html">conversion</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Looking around for some data to play with, I stumbled-upon a <a href="https://drive.google.com/file/d/0B7ljSqzqjOkEMEFXdlY1WXN6WUk/view">small dataset</a> that <a href="http://www.hopper.com">hopper</a> is using as a teaser puzzle in their job posting for a data scientist. Taking a quick&nbsp;look&#8230;</p>
+<div class="highlight"><pre><span></span><span class="kp">options</span><span class="p">(</span>scipen<span class="o">=</span><span class="m">999</span><span class="p">)</span>
+<span class="kp">lapply</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;plyr&quot;</span><span class="p">,</span><span class="s">&quot;dplyr&quot;</span><span class="p">,</span><span class="s">&quot;ggplot2&quot;</span><span class="p">,</span><span class="s">&quot;scales&quot;</span><span class="p">,</span><span class="s">&quot;Hmisc&quot;</span><span class="p">,</span><span class="s">&quot;YaleToolkit&quot;</span><span class="p">,</span><span class="s">&quot;gpairs&quot;</span><span class="p">,</span><span class="s">&quot;RColorBrewer&quot;</span><span class="p">),</span><span class="kn">require</span><span class="p">,</span>character.only<span class="o">=</span><span class="bp">T</span><span class="p">,</span>quietly<span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+
+<span class="kp">system</span><span class="p">(</span><span class="s">&quot;cat ~/Downloads/puzzle.csv | (head -n 5 ; tail -n 5)&quot;</span><span class="p">)</span>
+<span class="m">0.3971497</span><span class="p">,</span><span class="m">2.1136286</span>
+<span class="m">0.3971497</span><span class="p">,</span><span class="m">2.1136286</span>
+<span class="m">0.3971497</span><span class="p">,</span><span class="m">2.1136286</span>
+<span class="m">0.3971497</span><span class="p">,</span><span class="m">2.1136286</span>
+<span class="m">0.3971497</span><span class="p">,</span><span class="m">2.1136286</span>
+<span class="m">0.6589491</span><span class="p">,</span><span class="m">-1.5535368</span>
+<span class="m">0.8439924</span><span class="p">,</span><span class="m">0.6126211</span>
+<span class="m">0.7515614</span><span class="p">,</span><span class="m">1.2998793</span>
+<span class="m">0.9068190</span><span class="p">,</span><span class="m">0.0774441</span>
+<span class="m">1.0608076</span><span class="p">,</span><span class="m">-2.8246059</span>
+
+hop <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&quot;~/Downloads/puzzle.csv&quot;</span><span class="p">,</span>header <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+
+str<span class="p">(</span>hop<span class="p">)</span>
+<span class="s">&#39;data.frame&#39;</span><span class="o">:</span>   <span class="m">1024</span> obs. of  <span class="m">2</span> variables<span class="o">:</span>
+ <span class="o">$</span> V1<span class="o">:</span> num  <span class="m">0.397</span> <span class="m">0.397</span> <span class="m">0.397</span> <span class="m">0.397</span> <span class="m">0.397</span> <span class="kc">...</span>
+ <span class="o">$</span> V2<span class="o">:</span> num  <span class="m">2.11</span> <span class="m">2.11</span> <span class="m">2.11</span> <span class="m">2.11</span> <span class="m">2.11</span> <span class="kc">...</span>
+
+<span class="kp">sum</span><span class="p">(</span><span class="kp">is.finite</span><span class="p">(</span>hop<span class="o">$</span>v1<span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0</span>
+
+<span class="kp">sum</span><span class="p">(</span><span class="kp">is.finite</span><span class="p">(</span>hop<span class="o">$</span>v2<span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0</span>
+
+<span class="kp">summary</span><span class="p">(</span>hop<span class="p">)</span>
+       V1                V2
+ Min.   <span class="o">:</span><span class="m">-0.9251</span>   Min.   <span class="o">:</span><span class="m">-2.8379</span>
+ <span class="m">1</span>st Qu.<span class="o">:</span> <span class="m">0.3930</span>   <span class="m">1</span>st Qu.<span class="o">:</span><span class="m">-1.5649</span>
+ Median <span class="o">:</span> <span class="m">0.5914</span>   Median <span class="o">:</span><span class="m">-1.1465</span>
+ Mean   <span class="o">:</span> <span class="m">0.5057</span>   Mean   <span class="o">:</span><span class="m">-0.3965</span>
+ <span class="m">3</span>rd Qu.<span class="o">:</span> <span class="m">0.7462</span>   <span class="m">3</span>rd Qu.<span class="o">:</span> <span class="m">0.5701</span>
+ Max.   <span class="o">:</span> <span class="m">1.2213</span>   Max.   <span class="o">:</span> <span class="m">3.0970</span>
+</pre></div>
+
+
+<p>The dataset seems to be clean and straightforward. 1024 obs: Kilobyte? A few&nbsp;plots&#8230;</p>
+<div class="highlight"><pre><span></span>qplot<span class="p">(</span><span class="kp">as.numeric</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>hop<span class="p">)),</span>V1<span class="p">,</span>data<span class="o">=</span>hop<span class="p">,</span>xlab <span class="o">=</span> <span class="s">&quot;Index&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="scatterplot" src="http://booma.net/images/hop-plot-v1.jpeg"></p>
+<div class="highlight"><pre><span></span>qplot<span class="p">(</span><span class="kp">as.numeric</span><span class="p">(</span><span class="kp">row.names</span><span class="p">(</span>hop<span class="p">)),</span>V2<span class="p">,</span>data<span class="o">=</span>hop<span class="p">,</span>xlab <span class="o">=</span> <span class="s">&quot;Index&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="scatterplot" src="http://booma.net/images/hop-plot-v2.jpeg">
+Patterns here. And weird groups of duplicates in both vars between index 0 and&nbsp;125.</p>
+<div class="highlight"><pre><span></span>gpairs<span class="p">(</span>hop<span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="pairs plots" src="http://booma.net/images/hop-plot-gpairs.jpeg">
+Looks like a world&nbsp;map!</p>
+<div class="highlight"><pre><span></span><span class="kp">with</span><span class="p">(</span>hop<span class="p">,</span>qplot<span class="p">(</span>V2<span class="p">,</span>V1<span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="pairs plot" src="http://booma.net/images/hop-plot-qplot-v2-v1.jpeg">
+Clearly. Values of 1 on the Y axis appear to correspond to 60 degrees N/S latitude. Maybe all values have been divided by&nbsp;60?</p>
+<div class="highlight"><pre><span></span>hop<span class="o">$</span>lon <span class="o">&lt;-</span> hop<span class="o">$</span>V2 <span class="o">*</span> <span class="m">60</span>
+hop<span class="o">$</span>lat <span class="o">&lt;-</span> hop<span class="o">$</span>V1 <span class="o">*</span> <span class="m">60</span>
+<span class="kp">lapply</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;ggmap&quot;</span><span class="p">,</span><span class="s">&quot;maps&quot;</span><span class="p">,</span><span class="s">&quot;maptools&quot;</span><span class="p">,</span><span class="s">&quot;mapproj&quot;</span><span class="p">),</span><span class="kn">require</span><span class="p">,</span>character.only<span class="o">=</span><span class="bp">T</span><span class="p">,</span>quietly<span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+basemap <span class="o">&lt;-</span> borders<span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">)</span>
+m <span class="o">&lt;-</span> ggplot<span class="p">()</span> <span class="o">+</span> basemap
+m <span class="o">+</span> geom_point<span class="p">(</span>aes<span class="p">(</span>x<span class="o">=</span>hop<span class="o">$</span>lon<span class="p">,</span>y<span class="o">=</span>hop<span class="o">$</span>lat<span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-x60points-over-basemap.jpeg">
+Not quite right. Easting goes beyond 180. Another projection? Looking at different options in <a href="https://pubs.usgs.gov/pp/1395/report.pdf">Snyder&#8217;s manual</a> I don&#8217;t think so. But I am reminded that formulas for working with projections are typically done in&nbsp;radians&#8230;</p>
+<div class="highlight"><pre><span></span><span class="kp">names</span><span class="p">(</span>hop<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;v1&quot;</span><span class="p">,</span><span class="s">&quot;v2&quot;</span><span class="p">,</span><span class="s">&quot;lon60&quot;</span><span class="p">,</span><span class="s">&quot;lat60&quot;</span><span class="p">)</span>
+
+<span class="m">180</span><span class="o">/</span><span class="kc">pi</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">57.29578</span>
+
+hop<span class="o">$</span>lonrad2deg <span class="o">&lt;-</span> hop<span class="o">$</span>v2 <span class="o">*</span> <span class="m">57.29578</span>
+hop<span class="o">$</span>latrad2deg <span class="o">&lt;-</span> hop<span class="o">$</span>v1 <span class="o">*</span> <span class="m">57.29578</span>
+m <span class="o">+</span> geom_point<span class="p">(</span>aes<span class="p">(</span>x<span class="o">=</span>hop<span class="o">$</span>lonrad2deg<span class="p">,</span>y<span class="o">=</span>hop<span class="o">$</span>latrad2deg<span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-rad2degpoints-over-basemap.jpeg">
+Nice! What about the&nbsp;duplicates?</p>
+<div class="highlight"><pre><span></span>coordsn <span class="o">&lt;-</span> count<span class="p">(</span>hop<span class="p">,</span>lon <span class="o">=</span> lonrad2deg<span class="p">,</span> lat <span class="o">=</span> latrad2deg<span class="p">)</span>
+
+<span class="kp">summary</span><span class="p">(</span>coordsn<span class="p">)</span>
+      lon               lat               n
+ Min.   <span class="o">:</span><span class="m">-162.60</span>   Min.   <span class="o">:</span><span class="m">-53.00</span>   Min.   <span class="o">:</span>  <span class="m">1.000</span>
+ <span class="m">1</span>st Qu.<span class="o">:</span> <span class="m">-92.83</span>   <span class="m">1</span>st Qu.<span class="o">:</span> <span class="m">19.75</span>   <span class="m">1</span>st Qu.<span class="o">:</span>  <span class="m">1.000</span>
+ Median <span class="o">:</span> <span class="m">-73.10</span>   Median <span class="o">:</span> <span class="m">36.08</span>   Median <span class="o">:</span>  <span class="m">1.000</span>
+ Mean   <span class="o">:</span> <span class="m">-37.97</span>   Mean   <span class="o">:</span> <span class="m">29.63</span>   Mean   <span class="o">:</span>  <span class="m">1.119</span>
+ <span class="m">3</span>rd Qu.<span class="o">:</span>  <span class="m">13.26</span>   <span class="m">3</span>rd Qu.<span class="o">:</span> <span class="m">43.46</span>   <span class="m">3</span>rd Qu.<span class="o">:</span>  <span class="m">1.000</span>
+ Max.   <span class="o">:</span> <span class="m">177.44</span>   Max.   <span class="o">:</span> <span class="m">69.98</span>   Max.   <span class="o">:</span><span class="m">101.000</span>
+
+<span class="kp">unique</span><span class="p">(</span>coordsn<span class="o">$</span>n<span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span>   <span class="m">1</span>   <span class="m">2</span> <span class="m">101</span>
+
+dupset <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span><span class="kp">subset</span><span class="p">(</span>coordsn<span class="p">,</span>n<span class="o">&gt;</span><span class="m">1</span><span class="p">))</span>
+
+str<span class="p">(</span>dupset<span class="p">)</span>
+<span class="s">&#39;data.frame&#39;</span><span class="o">:</span>   <span class="m">10</span> obs. of  <span class="m">3</span> variables<span class="o">:</span>
+ <span class="o">$</span> lon<span class="o">:</span> num  <span class="m">-150</span> <span class="m">-122.4</span> <span class="m">-96.2</span> <span class="m">-86.3</span> <span class="m">-82.6</span> <span class="kc">...</span>
+ <span class="o">$</span> lat<span class="o">:</span> num  <span class="m">61.2</span> <span class="m">37.6</span> <span class="m">19.1</span> <span class="m">39.7</span> <span class="m">38.4</span> <span class="kc">...</span>
+ <span class="o">$</span> n  <span class="o">:</span> int  <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">101</span>
+
+dupset<span class="p">[</span>dupset<span class="o">$</span>n <span class="o">&gt;</span> <span class="m">2</span><span class="p">,]</span>
+       lon    lat   n
+<span class="m">10</span> <span class="m">121.102</span> <span class="m">22.755</span> <span class="m">101</span>
+
+m <span class="o">+</span> geom_point<span class="p">(</span>aes<span class="p">(</span>x<span class="o">=</span>dupset<span class="o">$</span>lon<span class="p">,</span>y<span class="o">=</span>dupset<span class="o">$</span>lat<span class="p">))</span>
+</pre></div>
+
+
+<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-dups-over-basemap.jpeg">
+Weird. Seemingly no connection between locations with duplicates. Coming from hopper, I assume these are airports. I can plot points against <a href="http://www.openstreetmap.org"><span class="caps">OSM</span></a> or similar basemap to confirm. But what is going on with the one in what looks like Taiwan with 101 of them? Maybe something like search traffic on hopper&#8217;s servers at a given moment. China&#8217;s population is so large that it&#8217;s&nbsp;possible.</p>
+<p>Unfortunately, no more time for this right now. A future&nbsp;post&#8230;</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://github.com/gregorybooma"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+    <li class="list-group-item"><a href="https://twitter.com/gregorybooma"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/gregorybooma/"><i class="fa fa-linkedin-square fa-lg"></i> LinkedIn</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Recent Posts -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+  <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="http://booma.net/hopper-puzzle-part-1.html">Hopper Puzzle - Part&nbsp;1</a></li>
+    <li class="list-group-item"><a href="http://booma.net/fork-to-stand-alone-github-repo-while-keeping-history.html">From fork to stand-alone GitHub repo while keeping&nbsp;history</a></li>
+    <li class="list-group-item"><a href="http://booma.net/up-and-running-with-pelican.html">First Post Using&nbsp;Pelican</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Recent Posts -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://booma.net" target="_blank">booma.net</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 Gregory Booma
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://booma.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://booma.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://booma.net/theme/js/respond.min.js"></script>
+
+
+
+</body>
+</html>
