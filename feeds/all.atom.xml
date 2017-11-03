@@ -51,20 +51,20 @@ str&lt;span class="p"&gt;(&lt;/span&gt;hop&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="scatterplot" src="http://booma.net/images/hop-plot-v2.jpeg"&gt;
-Patterns here. And weird groups of duplicates in both vars between index 0 and&amp;nbsp;125.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="scatterplot" src="http://booma.net/images/hop-plot-v2.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Patterns here. And weird groups of duplicates in both vars between index 0 and&amp;nbsp;125.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gpairs&lt;span class="p"&gt;(&lt;/span&gt;hop&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="pairs plots" src="http://booma.net/images/hop-plot-gpairs.jpeg"&gt;
-Looks like a world&amp;nbsp;map!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pairs plots" src="http://booma.net/images/hop-plot-gpairs.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Looks like a world&amp;nbsp;map!&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;with&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;hop&lt;span class="p"&gt;,&lt;/span&gt;qplot&lt;span class="p"&gt;(&lt;/span&gt;V2&lt;span class="p"&gt;,&lt;/span&gt;V1&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="pairs plot" src="http://booma.net/images/hop-plot-qplot-v2-v1.jpeg"&gt;
-Clearly. Values of 1 on the Y axis appear to correspond to 60 degrees N/S latitude. Maybe all values have been divided by&amp;nbsp;60?&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pairs plot" src="http://booma.net/images/hop-plot-qplot-v2-v1.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Clearly. Values of 1 on the Y axis appear to correspond to 60 degrees N/S latitude. Maybe all values have been divided by&amp;nbsp;60?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hop&lt;span class="o"&gt;$&lt;/span&gt;lon &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; hop&lt;span class="o"&gt;$&lt;/span&gt;V2 &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="m"&gt;60&lt;/span&gt;
 hop&lt;span class="o"&gt;$&lt;/span&gt;lat &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; hop&lt;span class="o"&gt;$&lt;/span&gt;V1 &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="m"&gt;60&lt;/span&gt;
 &lt;span class="kp"&gt;lapply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ggmap&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;maps&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;maptools&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mapproj&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="kn"&gt;require&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;character.only&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;T&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;quietly&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;T&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -74,8 +74,8 @@ m &lt;span class="o"&gt;+&lt;/span&gt; geom_point&lt;span class="p"&gt;(&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="map plot" src="http://booma.net/images/hop-ggplot-x60points-over-basemap.jpeg"&gt;
-Not quite right. Easting goes beyond 180. Another projection? Looking at different options in &lt;a href="https://pubs.usgs.gov/pp/1395/report.pdf"&gt;Snyder&amp;#8217;s manual&lt;/a&gt; I don&amp;#8217;t think so. But I am reminded that formulas for working with projections are typically done in&amp;nbsp;radians&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="map plot" src="http://booma.net/images/hop-ggplot-x60points-over-basemap.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Not quite right. Easting goes beyond 180. Another projection? Looking at different options in &lt;a href="https://pubs.usgs.gov/pp/1395/report.pdf"&gt;Snyder&amp;#8217;s manual&lt;/a&gt; I don&amp;#8217;t think so. But I am reminded that formulas for working with projections are typically done in&amp;nbsp;radians&amp;#8230;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kp"&gt;names&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;hop&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;v1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;v2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lon60&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;lat60&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="m"&gt;180&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kc"&gt;pi&lt;/span&gt;
@@ -87,8 +87,8 @@ m &lt;span class="o"&gt;+&lt;/span&gt; geom_point&lt;span class="p"&gt;(&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="map plot" src="http://booma.net/images/hop-ggplot-rad2degpoints-over-basemap.jpeg"&gt;
-Nice! What about the&amp;nbsp;duplicates?&lt;/p&gt;
+&lt;p&gt;&lt;img alt="map plot" src="http://booma.net/images/hop-ggplot-rad2degpoints-over-basemap.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Nice! What about the&amp;nbsp;duplicates?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;coordsn &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; count&lt;span class="p"&gt;(&lt;/span&gt;hop&lt;span class="p"&gt;,&lt;/span&gt;lon &lt;span class="o"&gt;=&lt;/span&gt; lonrad2deg&lt;span class="p"&gt;,&lt;/span&gt; lat &lt;span class="o"&gt;=&lt;/span&gt; latrad2deg&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="kp"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;coordsn&lt;span class="p"&gt;)&lt;/span&gt;
@@ -119,8 +119,8 @@ m &lt;span class="o"&gt;+&lt;/span&gt; geom_point&lt;span class="p"&gt;(&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="map plot" src="http://booma.net/images/hop-ggplot-dups-over-basemap.jpeg"&gt;
-Weird. Seemingly no connection between locations with duplicates. Coming from hopper, I assume these are airports. I can plot points against &lt;a href="http://www.openstreetmap.org"&gt;&lt;span class="caps"&gt;OSM&lt;/span&gt;&lt;/a&gt; or similar basemap to confirm. But what is going on with the one in what looks like Taiwan with 101 of them? Maybe something like search traffic on hopper&amp;#8217;s servers at a given moment. China&amp;#8217;s population is so large that it&amp;#8217;s&amp;nbsp;possible.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="map plot" src="http://booma.net/images/hop-ggplot-dups-over-basemap.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;Weird. Seemingly no connection between locations with duplicates. Coming from hopper, I assume these are airports. I can plot points against &lt;a href="http://www.openstreetmap.org"&gt;&lt;span class="caps"&gt;OSM&lt;/span&gt;&lt;/a&gt; or similar basemap to confirm. But what is going on with the one in what looks like Taiwan with 101 of them? Maybe something like search traffic on hopper&amp;#8217;s servers at a given moment. China&amp;#8217;s population is so large that it&amp;#8217;s&amp;nbsp;possible.&lt;/p&gt;
 &lt;p&gt;Unfortunately, no more time for this right now. A future&amp;nbsp;post&amp;#8230;&lt;/p&gt;</content><category term="hopper"></category><category term="map"></category><category term="coordinates"></category><category term="radians"></category><category term="degrees"></category><category term="conversion"></category></entry><entry><title>From fork to stand-alone GitHub repo while keeping history</title><link href="http://booma.net/fork-to-stand-alone-github-repo-while-keeping-history.html" rel="alternate"></link><published>2017-10-22T00:00:00-04:00</published><updated>2017-10-26T00:00:00-04:00</updated><author><name>Gregory Booma</name></author><id>tag:booma.net,2017-10-22:/fork-to-stand-alone-github-repo-while-keeping-history.html</id><summary type="html">&lt;p&gt;It seems like a person should simply be able to &amp;#8220;unfork&amp;#8221; their GitHub repository when they no longer want it to be a fork, but would like to keep their commit history. Unfortunately, GitHub has no function like this, and says to contact support to change a repo&amp;#8217;s &amp;#8220;mode …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It seems like a person should simply be able to &amp;#8220;unfork&amp;#8221; their GitHub repository when they no longer want it to be a fork, but would like to keep their commit history. Unfortunately, GitHub has no function like this, and says to contact support to change a repo&amp;#8217;s &amp;#8220;mode&amp;#8221;. After a bit of digging in git/GitHub help pages, I found that one can use &lt;a href="https://help.github.com/articles/duplicating-a-repository/"&gt;clone and mirror commands&lt;/a&gt; to the same effect. A word of caution: In addition to the &amp;#8220;forked from&amp;#8221; attribution, this method drops any wikis, issues, etc. associated with the repo (but again, the commit history is retained). Steps are as&amp;nbsp;follows:&lt;/p&gt;
 &lt;p&gt;1) Make a temporary local bare clone of the forked&amp;nbsp;repo&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --bare git@github.com:gregorybooma/osq.git

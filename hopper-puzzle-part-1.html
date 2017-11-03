@@ -174,20 +174,20 @@ str<span class="p">(</span>hop<span class="p">)</span>
 </pre></div>
 
 
-<p><img alt="scatterplot" src="http://booma.net/images/hop-plot-v2.jpeg">
-Patterns here. And weird groups of duplicates in both vars between index 0 and&nbsp;125.</p>
+<p><img alt="scatterplot" src="http://booma.net/images/hop-plot-v2.jpeg"></p>
+<p>Patterns here. And weird groups of duplicates in both vars between index 0 and&nbsp;125.</p>
 <div class="highlight"><pre><span></span>gpairs<span class="p">(</span>hop<span class="p">)</span>
 </pre></div>
 
 
-<p><img alt="pairs plots" src="http://booma.net/images/hop-plot-gpairs.jpeg">
-Looks like a world&nbsp;map!</p>
+<p><img alt="pairs plots" src="http://booma.net/images/hop-plot-gpairs.jpeg"></p>
+<p>Looks like a world&nbsp;map!</p>
 <div class="highlight"><pre><span></span><span class="kp">with</span><span class="p">(</span>hop<span class="p">,</span>qplot<span class="p">(</span>V2<span class="p">,</span>V1<span class="p">))</span>
 </pre></div>
 
 
-<p><img alt="pairs plot" src="http://booma.net/images/hop-plot-qplot-v2-v1.jpeg">
-Clearly. Values of 1 on the Y axis appear to correspond to 60 degrees N/S latitude. Maybe all values have been divided by&nbsp;60?</p>
+<p><img alt="pairs plot" src="http://booma.net/images/hop-plot-qplot-v2-v1.jpeg"></p>
+<p>Clearly. Values of 1 on the Y axis appear to correspond to 60 degrees N/S latitude. Maybe all values have been divided by&nbsp;60?</p>
 <div class="highlight"><pre><span></span>hop<span class="o">$</span>lon <span class="o">&lt;-</span> hop<span class="o">$</span>V2 <span class="o">*</span> <span class="m">60</span>
 hop<span class="o">$</span>lat <span class="o">&lt;-</span> hop<span class="o">$</span>V1 <span class="o">*</span> <span class="m">60</span>
 <span class="kp">lapply</span><span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;ggmap&quot;</span><span class="p">,</span><span class="s">&quot;maps&quot;</span><span class="p">,</span><span class="s">&quot;maptools&quot;</span><span class="p">,</span><span class="s">&quot;mapproj&quot;</span><span class="p">),</span><span class="kn">require</span><span class="p">,</span>character.only<span class="o">=</span><span class="bp">T</span><span class="p">,</span>quietly<span class="o">=</span><span class="bp">T</span><span class="p">)</span>
@@ -197,8 +197,8 @@ m <span class="o">+</span> geom_point<span class="p">(</span>aes<span class="p">
 </pre></div>
 
 
-<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-x60points-over-basemap.jpeg">
-Not quite right. Easting goes beyond 180. Another projection? Looking at different options in <a href="https://pubs.usgs.gov/pp/1395/report.pdf">Snyder&#8217;s manual</a> I don&#8217;t think so. But I am reminded that formulas for working with projections are typically done in&nbsp;radians&#8230;</p>
+<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-x60points-over-basemap.jpeg"></p>
+<p>Not quite right. Easting goes beyond 180. Another projection? Looking at different options in <a href="https://pubs.usgs.gov/pp/1395/report.pdf">Snyder&#8217;s manual</a> I don&#8217;t think so. But I am reminded that formulas for working with projections are typically done in&nbsp;radians&#8230;</p>
 <div class="highlight"><pre><span></span><span class="kp">names</span><span class="p">(</span>hop<span class="p">)</span> <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;v1&quot;</span><span class="p">,</span><span class="s">&quot;v2&quot;</span><span class="p">,</span><span class="s">&quot;lon60&quot;</span><span class="p">,</span><span class="s">&quot;lat60&quot;</span><span class="p">)</span>
 
 <span class="m">180</span><span class="o">/</span><span class="kc">pi</span>
@@ -210,8 +210,8 @@ m <span class="o">+</span> geom_point<span class="p">(</span>aes<span class="p">
 </pre></div>
 
 
-<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-rad2degpoints-over-basemap.jpeg">
-Nice! What about the&nbsp;duplicates?</p>
+<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-rad2degpoints-over-basemap.jpeg"></p>
+<p>Nice! What about the&nbsp;duplicates?</p>
 <div class="highlight"><pre><span></span>coordsn <span class="o">&lt;-</span> count<span class="p">(</span>hop<span class="p">,</span>lon <span class="o">=</span> lonrad2deg<span class="p">,</span> lat <span class="o">=</span> latrad2deg<span class="p">)</span>
 
 <span class="kp">summary</span><span class="p">(</span>coordsn<span class="p">)</span>
@@ -242,8 +242,8 @@ m <span class="o">+</span> geom_point<span class="p">(</span>aes<span class="p">
 </pre></div>
 
 
-<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-dups-over-basemap.jpeg">
-Weird. Seemingly no connection between locations with duplicates. Coming from hopper, I assume these are airports. I can plot points against <a href="http://www.openstreetmap.org"><span class="caps">OSM</span></a> or similar basemap to confirm. But what is going on with the one in what looks like Taiwan with 101 of them? Maybe something like search traffic on hopper&#8217;s servers at a given moment. China&#8217;s population is so large that it&#8217;s&nbsp;possible.</p>
+<p><img alt="map plot" src="http://booma.net/images/hop-ggplot-dups-over-basemap.jpeg"></p>
+<p>Weird. Seemingly no connection between locations with duplicates. Coming from hopper, I assume these are airports. I can plot points against <a href="http://www.openstreetmap.org"><span class="caps">OSM</span></a> or similar basemap to confirm. But what is going on with the one in what looks like Taiwan with 101 of them? Maybe something like search traffic on hopper&#8217;s servers at a given moment. China&#8217;s population is so large that it&#8217;s&nbsp;possible.</p>
 <p>Unfortunately, no more time for this right now. A future&nbsp;post&#8230;</p>
             </div>
             <!-- /.entry-content -->
