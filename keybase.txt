@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/gregb
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://booma.net
+  * I am gregb (https://keybase.io/gregb) on keybase.
+  * I have a public key ASCV11nzDoMkZdNv06F0NvECUmsLKm-ZVzl5f-ZK2PD2PAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012095d759f30e832465d36fd3a17436f102526b0b2a6f995739797fe64ad8f0f63c0a",
+      "host": "keybase.io",
+      "kid": "012095d759f30e832465d36fd3a17436f102526b0b2a6f995739797fe64ad8f0f63c0a",
+      "uid": "2fe64f0cb410dd82e4b415ba626a4b19",
+      "username": "gregb"
+    },
+    "merkle_root": {
+      "ctime": 1522688480,
+      "hash": "de6014bd9965ee38c26a899e24e4aeeb225201e2363a3b6ce59c2a914d60978bc13fd194225b714cafb42c054787d0c7c833295ef27b10b83eb24c1e8a194428",
+      "hash_meta": "594a6baecb64d2683574581bae0fa7686c1d54ca4e1b94b88cbcef1a9a49cce3",
+      "seqno": 2323521
+    },
+    "service": {
+      "hostname": "booma.net",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.45"
+  },
+  "ctime": 1522691587,
+  "expire_in": 504576000,
+  "prev": "27af7bbb7b5748d13a716692542e0bfdf7bc5af6100d0e9b55f8751ca74197a9",
+  "seqno": 15,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEglddZ8w6DJGXTb9OhdDbxAlJrCypvmVc5eX/mStjw9jwKp3BheWxvYWTFAz97ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwOTVkNzU5ZjMwZTgzMjQ2NWQzNmZkM2ExNzQzNmYxMDI1MjZiMGIyYTZmOTk1NzM5Nzk3ZmU2NGFkOGYwZjYzYzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwOTVkNzU5ZjMwZTgzMjQ2NWQzNmZkM2ExNzQzNmYxMDI1MjZiMGIyYTZmOTk1NzM5Nzk3ZmU2NGFkOGYwZjYzYzBhIiwidWlkIjoiMmZlNjRmMGNiNDEwZGQ4MmU0YjQxNWJhNjI2YTRiMTkiLCJ1c2VybmFtZSI6ImdyZWdiIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTIyNjg4NDgwLCJoYXNoIjoiZGU2MDE0YmQ5OTY1ZWUzOGMyNmE4OTllMjRlNGFlZWIyMjUyMDFlMjM2M2EzYjZjZTU5YzJhOTE0ZDYwOTc4YmMxM2ZkMTk0MjI1YjcxNGNhZmI0MmMwNTQ3ODdkMGM3YzgzMzI5NWVmMjdiMTBiODNlYjI0YzFlOGExOTQ0MjgiLCJoYXNoX21ldGEiOiI1OTRhNmJhZWNiNjRkMjY4MzU3NDU4MWJhZTBmYTc2ODZjMWQ1NGNhNGUxYjk0Yjg4Y2JjZWYxYTlhNDljY2UzIiwic2Vxbm8iOjIzMjM1MjF9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiYm9vbWEubmV0IiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuNDUifSwiY3RpbWUiOjE1MjI2OTE1ODcsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiMjdhZjdiYmI3YjU3NDhkMTNhNzE2NjkyNTQyZTBiZmRmN2JjNWFmNjEwMGQwZTliNTVmODc1MWNhNzQxOTdhOSIsInNlcW5vIjoxNSwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEAp616HwCKRnxyoip0l3sBAUevH2R3NiXZUPJKNBvi1p4DUuSVKkA5GXjfTu4w6+NHNxS8t1hfcxmTuIh6HMP4LqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgoTchDCTtL41wySg9PT6RAW5gm2YuKuXG0Ui0/FvB6o+jdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gregb
+
+==================================================================
