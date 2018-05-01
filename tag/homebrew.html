@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>keybase&nbsp;proof - booma.net</title>
+    <title>homebrew - booma.net</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +9,16 @@
 
 
 
-<link rel="canonical" href="http://booma.net/pages/keybase-proof.html">
 
-        <meta name="author" content="Gregory Booma" />
-        <meta name="description" content="keybase proof" />
+    <meta name="author" content="Gregory Booma" />
+    <meta name="keywords" content="homebrew" />
 
-    <meta property="og:site_name" content="booma.net" />
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="keybase proof"/>
-    <meta property="og:url" content="http://booma.net/pages/keybase-proof.html"/>
-    <meta property="og:description" content="keybase proof" />
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="booma.net" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="booma.net"/>
+        <meta property="og:url" content="http://booma.net"/>
+        <meta property="og:description" content="booma.net"/>
 
 
     <!-- Bootstrap -->
@@ -61,6 +61,9 @@ booma.net            </a>
                         <li >
                             <a href="http://booma.net/category/puzzles.html">Puzzles</a>
                         </li>
+                        <li >
+                            <a href="http://booma.net/category/scripts.html">Scripts</a>
+                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -73,13 +76,29 @@ booma.net            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-    <section id="content" class="body">
-        <h1 class="entry-title">keybase&nbsp;proof</h1>
-        
-        <div class="entry-content">
-            <p>this page is a keybase&nbsp;proof</p>
-        </div>
-    </section>
+            <article>
+                <h2><a href="http://booma.net/homebrew-standalone-script.html">Identifying Homebrew Standalone&nbsp;Formulas</a></h2>
+                <div class="summary"><p>A little python script to identify homebrew &#8220;standalone&#8221;&nbsp;formulas&#8230;</p>
+<div class="highlight"><pre><span></span><span class="ch">#! /usr/bin/python</span>
+
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="n">aloneList</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">brewStandAlone</span><span class="p">(</span><span class="n">formula</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Checking status of: &quot;</span><span class="o">+</span><span class="n">formula</span><span class="p">)</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;brew uses &quot;</span><span class="o">+</span><span class="n">formula</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot; --installed&quot;</span>
+    <span class="n">useTest</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">useTest</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">aloneList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">formula</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">formulae</span> <span class="o">=</span> <span class="n">os …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="http://booma.net/homebrew-standalone-script.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -102,9 +121,7 @@ booma.net            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
-    <li class="list-group-item"><a href="http://booma.net/hopper-puzzle-part-1.html">Hopper Puzzle - Part&nbsp;1</a></li>
-    <li class="list-group-item"><a href="http://booma.net/fork-to-stand-alone-github-repo-while-keeping-history.html">From fork to stand-alone GitHub repo while keeping&nbsp;history</a></li>
-    <li class="list-group-item"><a href="http://booma.net/up-and-running-with-pelican.html">First Post Using&nbsp;Pelican</a></li>
+    <li class="list-group-item"><a href="http://booma.net/homebrew-standalone-script.html">Identifying Homebrew Standalone&nbsp;Formulas</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -129,7 +146,7 @@ booma.net            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 Gregory Booma
+         <div class="col-xs-10">&copy; 2018 Gregory Booma
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
